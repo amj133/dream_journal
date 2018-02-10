@@ -1,0 +1,11 @@
+<h3><%= @user.user_name %>'s Dream Journal</h3>
+
+<ul>
+  <% @user.dreams.each do |dream| %>
+    <li>
+      <%= link_to dream.title, dream_path(dream) %>
+      <%= link_to 'Edit', edit_user_dream_path(@user, dream) %>
+      <%= link_to 'Delete', user_dream_path(dream), method: :delete %>
+    </li>
+  <% end %>
+</ul>
