@@ -3,7 +3,7 @@
 <ul>
   <% @user.dreams.each do |dream| %>
     <li>
-      <%= dream.title %>
+      <%= link_to dream.title, dream_path(dream) %>
     </li>
   <% end %>
 </ul>
