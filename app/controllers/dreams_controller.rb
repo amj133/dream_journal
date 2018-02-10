@@ -4,6 +4,7 @@ class DreamsController < ApplicationController
 
   def show
     @dream = Dream.find(params[:id])
+    @comment = @dream.comments.new
   end
 
   def new

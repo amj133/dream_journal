@@ -1,0 +1,11 @@
+<h3>Post a Comment</h3>
+
+<%= form_for([@dream, @comment]) do |f| %>
+  <%= f.label :user_name %>
+  <%= f.text_field :user_name %><br><br>
+
+  <%= f.label :body %>
+  <%= f.text_area :body %><br><br>
+
+  <%= f.submit %>
+<% end %>

@@ -4,3 +4,10 @@
 
 <h5>Analysis</h5>
 <%= @dream.analysis %>
+
+<% if @dream.comments.count == 0 %>
+  <%= render partial: "comments/form" %>
+<% else %>
+  <%= render partial: "comment", collection: @dream.comments.reverse %>
+  <%= render partial: "comments/form" %>
+<% end %>

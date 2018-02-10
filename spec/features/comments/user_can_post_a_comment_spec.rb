@@ -12,11 +12,10 @@ describe "user can post a comment on a dream" do
       visit dream_path(dream)
       fill_in('comment[user_name]', with: "BobRocks")
       fill_in('comment[body]', with: "Thats a crazy dream")
-      click_on('Post Comment')
+      click_on('Create Comment')
 
       expect(current_path).to eq(dream_path(dream))
-      expect(page).to have_content("Comments:")
-      expect(page).to have_content("User Name: BobRocks")
+      expect(page).to have_content("Comment by: BobRocks")
       expect(page).to have_content("Thats a crazy dream")
     end
   end
