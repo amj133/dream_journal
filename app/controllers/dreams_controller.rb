@@ -19,6 +19,19 @@ class DreamsController < ApplicationController
     redirect_to dream_path(@dream)
   end
 
+  def edit
+    @user = User.find(params[:user_id])
+    @dream = Dream.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:user_id])
+    @dream = Dream.find(params[:id])
+    @dream.update(dream_params)
+
+    redirect_to dream_path(@dream)
+  end
+
   private
 
   def dream_params
