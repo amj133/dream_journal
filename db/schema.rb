@@ -10,14 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180210175011) do
+ActiveRecord::Schema.define(version: 20180210175958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dreams", force: :cascade do |t|
+    t.text "body"
+    t.text "analysis"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_dreams_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "user_name"
     t.string "email"
   end
 
+  add_foreign_key "dreams", "users"
 end
