@@ -1,0 +1,9 @@
+<h3><%= @user.user_name %>'s Dream Journal</h3>
+
+<ul>
+  <% @user.dreams.each do |dream| %>
+    <li>
+      <%= dream.title %>
+    </li>
+  <% end %>
+</ul>

@@ -13,8 +13,6 @@ describe "user sees all dreams they posted" do
 
       expect(page).to have_content("BobRocks15's Dream Journal")
       expect(page).to have_content(dream.title)
-      expect(page).to have_content(dream.body)
-      expect(page).to have_content(dream.analysis)
     end
   end
 end
