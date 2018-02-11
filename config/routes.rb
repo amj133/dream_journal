@@ -8,4 +8,6 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
 
+  resources :categories, only: [:index, :show]
+
 end

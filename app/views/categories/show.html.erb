@@ -1,0 +1,7 @@
+<h3>All dreams under category: <%= @category.name %></h3>
+
+<ul>
+  <% @category.dreams.each do |dream| %>
+    <li><%= dream.title %> : <%= dream.user.user_name %></li>
+  <% end %>
+</ul>
