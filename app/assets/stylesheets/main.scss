@@ -1,0 +1,48 @@
+html, body {
+  margin: 0;
+  background-color: white;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 18px;
+  height: 55px;
+  background-color: white;
+  margin-left: 215px;
+  margin-right: 215px;
+  font-family: 'Lobster', cursive;
+  padding-bottom: 15px;
+  border-bottom: 2px solid black;
+}
+
+#nav-image {
+  width: 60px;
+}
+
+main {
+  padding-left: 150px;
+  padding-top: 70px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0px;
+  background-color: rgb(34, 34, 36);
+  color: rgb(229,229,232);
+  height: 60px;
+  width: 100%;
+}
+
+#footer-link {
+  color: white;
+}
