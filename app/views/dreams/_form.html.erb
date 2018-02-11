@@ -8,5 +8,8 @@
   <%= f.label :analysis %>
   <%= f.text_area :analysis %><br>
 
+  <%= f.label "Category" %>
+  <%= collection_select(:dream, :category_ids, Category.all, :id, :name) %><br>
+
   <%= f.submit %>
 <% end %>

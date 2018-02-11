@@ -10,16 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180210221206) do
+ActiveRecord::Schema.define(version: 20180211020929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "comments", force: :cascade do |t|
     t.string "user_name"
     t.text "body"
     t.bigint "dream_id"
     t.index ["dream_id"], name: "index_comments_on_dream_id"
+  end
+
+  create_table "dream_categories", force: :cascade do |t|
+    t.bigint "dream_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_dream_categories_on_category_id"
+    t.index ["dream_id"], name: "index_dream_categories_on_dream_id"
   end
 
   create_table "dreams", force: :cascade do |t|
@@ -36,5 +47,7 @@ ActiveRecord::Schema.define(version: 20180210221206) do
   end
 
   add_foreign_key "comments", "dreams"
+  add_foreign_key "dream_categories", "categories"
+  add_foreign_key "dream_categories", "dreams"
   add_foreign_key "dreams", "users"
 end

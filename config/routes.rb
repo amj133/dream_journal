@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   resources :dreams, only: [:show] do
     resources :comments, only: [:create]
+    get '/add_category' => 'application#add_category'
+    get '/create_add_category' => 'application#create_add_category'
   end
+
+  resources :categories, only: [:index, :show]
 
 end
