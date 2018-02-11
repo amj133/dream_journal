@@ -10,12 +10,14 @@ class DreamsController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @dream = @user.dreams.new
+    # @dream_category = DreamCategory.new
   end
 
   def create
     @user = User.find(params[:user_id])
     @dream = @user.dreams.new(dream_params)
     @dream.save
+    @dream.category_ids = params[:dream][:category_ids].split
 
     redirect_to dream_path(@dream)
   end
@@ -26,7 +28,6 @@ class DreamsController < ApplicationController
   end
 
   def update
-    # @user = User.find(params[:user_id])
     @dream = Dream.find(params[:id])
     @dream.update(dream_params)
 
