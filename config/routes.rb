@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     resources :dreams, only: [:new, :create, :edit, :update, :destroy]
   end
 
-  resources :dreams, only: [:show]
+  resources :dreams, only: [:show] do
+    resources :comments, only: [:create]
+  end
 
 end
