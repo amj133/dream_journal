@@ -1,22 +1,30 @@
-<h3><%= @dream.user.user_name %> - <%= @dream.title%></h3>
+<div class='dreams'>
+  <div class='dreams-info-container'>
+    <h3><%= @dream.user.user_name %> - <%= @dream.title%></h3>
 
-<p>Dream Categories:</p>
-  <ul>
-    <% @dream.categories.each do |category| %>
-      <li><%= category.name %></li>
+    <p>Dream Categories:</p>
+      <ul>
+        <% @dream.categories.each do |category| %>
+          <li><%= category.name %></li>
+        <% end %>
+      </ul>
+
+    <p><%= link_to "Add Additional Category", dream_add_category_path(@dream) %></p>
+
+    <p><%= @dream.body %></p>
+
+    <h5>Analysis</h5>
+    <%= @dream.analysis %>
+
+    <% if @dream.comments.count == 0 %>
+      <%= render partial: "comments/form" %>
+    <% else %>
+      <%= render partial: "comment", collection: @dream.comments.reverse %>
+      <%= render partial: "comments/form" %>
     <% end %>
-  </ul>
+  </div>
 
-<p><%= link_to "Add Additional Category", dream_add_category_path(@dream) %></p>
-
-<p><%= @dream.body %></p>
-
-<h5>Analysis</h5>
-<%= @dream.analysis %>
-
-<% if @dream.comments.count == 0 %>
-  <%= render partial: "comments/form" %>
-<% else %>
-  <%= render partial: "comment", collection: @dream.comments.reverse %>
-  <%= render partial: "comments/form" %>
-<% end %>
+  <div class="dreams-image-container">
+    <%=image_tag("brain_tree.png", alt: "tree branches inside of a brain", id:"dreams-image") %>
+  </div>
+</div>
