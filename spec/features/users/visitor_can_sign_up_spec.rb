@@ -4,7 +4,7 @@ describe "visitor can sign up as user" do
   describe "from root can click sign up" do
     it "creates a new user when they submit info" do
       visit '/'
-      click_on('Sign Up')
+      click_on('Sign up')
 
       expect(current_path).to eq(new_user_path)
 

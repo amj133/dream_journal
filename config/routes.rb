@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  root to: "categories#index"
+  root to: "welcome#index"
 
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :new, :create] do
     resources :dreams, only: [:new, :create, :edit, :update, :destroy]
   end
 
