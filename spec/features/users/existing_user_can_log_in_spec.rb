@@ -13,7 +13,7 @@ describe "existing user can log in" do
 
     fill_in('user_name', with: bob.user_name)
     fill_in('password', with: bob.password)
-    click_on('Log In')
+    click_on('Log in')
 
     expect(current_path).to eq(user_path(bob))
     expect(page).to have_content("#{bob.user_name}'s Dream Journal")
