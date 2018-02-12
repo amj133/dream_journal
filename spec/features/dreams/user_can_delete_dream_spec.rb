@@ -4,6 +4,7 @@ describe "user can delete a dream" do
   describe "user visits user page" do
     it "has link to delete dream" do
       bob = User.create!(user_name: "BobRocks15",
+                         password: 'test',
                          email: "bobrocks@gmail.com")
       dream = bob.dreams.create!(title: "Escape From Jungle",
                                  body: "I was a worker on a jungle fortress, there was an overlord/slave driver with a whip, I escaped and flew away",

@@ -4,6 +4,7 @@ describe "user can create a new dream" do
   describe "visits new dream page and fills out information" do
     it "displays new dream on user show page" do
       bob = User.create!(user_name: "BobRocks15",
+                         password: 'test',
                          email: "bobrocks@gmail.com")
       blue = Category.create!(name: "blue")
 
@@ -24,6 +25,7 @@ describe "user can create a new dream" do
     describe "user visits dream show page" do
       it "contains links to add category" do
         bob = User.create!(user_name: "BobRocks15",
+                           password: 'test',
                            email: "bobrocks@gmail.com")
         blue = Category.create!(name: "blue")
         red = Category.create!(name: "red")
