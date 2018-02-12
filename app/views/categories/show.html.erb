@@ -2,6 +2,6 @@
 
 <ul>
   <% @category.dreams.each do |dream| %>
-    <li><%= dream.title %> : <%= dream.user.user_name %></li>
+    <li><%= link_to dream.title, dream_path(dream) %> : <%= dream.user.user_name %></li>
   <% end %>
 </ul>

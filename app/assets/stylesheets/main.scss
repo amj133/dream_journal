@@ -1,11 +1,12 @@
 html, body {
   margin: 0;
   background-color: white;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 a {
   text-decoration: none;
+  color: rgb(50, 25, 22);
 }
 
 nav {
@@ -28,7 +29,7 @@ nav {
 
 main {
   padding-left: 150px;
-  padding-top: 70px;
+  padding-top: 18px;
 }
 
 footer {
@@ -37,7 +38,8 @@ footer {
   justify-content: center;
   position: fixed;
   bottom: 0px;
-  background-color: rgb(34, 34, 36);
+  background-color: black;
+  // background-color: rgb(34, 34, 36);
   color: rgb(229,229,232);
   height: 60px;
   width: 100%;
