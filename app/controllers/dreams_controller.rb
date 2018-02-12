@@ -17,7 +17,8 @@ class DreamsController < ApplicationController
     @user = User.find(params[:user_id])
     @dream = @user.dreams.new(dream_params)
     @dream.save
-    @dream.category_ids = params[:dream][:category_ids].split
+    params[:dream][:category_ids].shift
+    @dream.category_ids = params[:dream][:category_ids]
 
     redirect_to dream_path(@dream)
   end
