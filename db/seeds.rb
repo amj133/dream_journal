@@ -12,6 +12,7 @@ frank = User.create(user_name: "FrankRocks14", password: 'test3', email: "frocks
 maybe = User.create(user_name: "MaybeRocks15", password: 'test4', email: "mrocks15@gmail.com")
 billy = User.create(user_name: "BillyRocks16", password: 'test5', email: "brocks16@gmail.com")
 annemarie = User.create(user_name: "AnnMarieRocks17", password: 'test6', email: "amrocks17@gmail.com")
+admin = User.create(user_name: "admin", password: "admin")
 
 flying = Category.create(name: "Flying")
 outer_space = Category.create(name: "Outer Space")
