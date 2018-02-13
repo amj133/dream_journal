@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     get '/create_add_category' => 'application#create_add_category'
   end
 
-  resources :categories, only: [:index, :show, :new, :create, :edit, :update]
+  resources :categories, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"
