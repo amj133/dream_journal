@@ -2,8 +2,11 @@ class CommentsController < ApplicationController
 
   def create
     @dream = Dream.find(params[:dream_id])
-    @dream.comments.create!(comment_params)
-
+    if current_user
+      @dream.comments.create!(comment_params)
+    else
+      flash.notice = "Must be registered to comment"
+    end
     redirect_to dream_path(@dream)
   end
 
