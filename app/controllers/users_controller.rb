@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     if current_user
       @user = User.find(params[:id])
     else
-      flash.notice = "Need to be loggin in"
+      flash.notice = "Need to be logged in"
       redirect_to users_path
     end
   end
