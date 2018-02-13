@@ -7,18 +7,7 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  def add_category
-    @dream = Dream.find(params[:dream_id])
-    @categories = Category.all
-
-    render :add_category
-  end
-
-  def create_add_category
-    @dream = Dream.find(params[:dream_id])
-    @new_category = Category.find(params[:dream][:new_category_id])
-    @dream.categories.push(@new_category)
-
-    redirect_to dream_path(@dream)
+  def current_admin?
+    current_user && current_user.admin?
   end
 end

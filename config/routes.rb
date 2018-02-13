@@ -12,7 +12,11 @@ Rails.application.routes.draw do
     get '/create_add_category' => 'application#create_add_category'
   end
 
-  resources :categories, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :categories, only: [:index, :show]
+
+  namespace :admin do
+    resources :categories, only: [:new, :create, :edit, :update, :destroy]
+  end
 
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"
