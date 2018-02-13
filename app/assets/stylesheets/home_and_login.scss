@@ -1,0 +1,24 @@
+.home {
+  display: flex;
+}
+
+.home-content-container {
+  margin-left: 20vh;
+  margin-top: 5vh;
+}
+
+.home-image-container {
+  position: absolute;
+  bottom: 0px;
+  margin-left: 400px;
+}
+
+.home-intro {
+  width: 45vh;
+}
+
+#home-image {
+  height: 85vh;
+  // height: 600px;
+  // background-color: rgb(237, 28, 71);
+}

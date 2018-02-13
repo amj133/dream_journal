@@ -1,4 +1,21 @@
-<h3>Global Dream Journal</h3>
+<div class='home'>
+  <div class='home-content-container'>
+    <h3>Global Dream Journal</h3>
 
-<%= link_to 'Sign up', new_user_path %>
-<%= link_to 'Log in here', login_path %>
+    <%= link_to 'Sign up', new_user_path %><br><br>
+    <%= link_to 'Log in here', login_path %><br><br>
+
+    <div class='home-intro'>
+      <p>This site is based on the idea that dreams are important, and that the more you pay attention to them
+      the more revealing they can become.  Often times we take note of our dreams immediately following peak
+      emotional experiences; a major break up, a death in the family, a career transition.  Perhaps the dream
+      stays us with us for a day or two, allowing us to ruminate on its implications for what we value in our
+      lives, only to be lost shortly thereafter.  Perhaps all, or many, of our dreams contain important information for us.
+      Pay attention, see what happens, participte in the playground of our minds...</p>
+    </div>
+  </div>
+
+  <div class="home-image-container">
+    <%=image_tag("japanese_maple.png", alt: "japanese maple", id:"home-image") %>
+  </div>
+</div>

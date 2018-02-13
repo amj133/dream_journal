@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: "welcome#index"
 
-  resources :users, only: [:show, :new, :create] do
+  resources :users, only: [:index, :show, :new, :create] do
     resources :dreams, only: [:new, :create, :edit, :update, :destroy]
   end
 
