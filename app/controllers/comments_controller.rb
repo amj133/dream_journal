@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     if current_user
       @dream.comments.create!(comment_params)
     else
-      flash.notice = "Must be registered to comment"
+      flash.notice = "Need to be logged in"
     end
     redirect_to dream_path(@dream)
   end

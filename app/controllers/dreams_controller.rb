@@ -31,6 +31,7 @@ class DreamsController < ApplicationController
       @user = User.find(params[:user_id])
       @dream = Dream.find(params[:id])
     else
+      flash.notice = "Need to be logged in"
       redirect_to '/'
     end
   end

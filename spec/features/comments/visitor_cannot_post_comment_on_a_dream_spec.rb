@@ -16,6 +16,7 @@ describe "visitor cannot post comment on a dream" do
       click_on('Create Comment')
 
       expect(current_path).to eq(dream_path(dream))
+      expect(page).to have_content("Need to be logged in")
       expect(page).to_not have_content("Sally")
       expect(page).to_not have_content("Thats a crazy dream")
     end
