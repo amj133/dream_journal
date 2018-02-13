@@ -8,9 +8,12 @@ class DreamsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
-    @dream = @user.dreams.new
-    # @dream_category = DreamCategory.new
+    if current_user
+      @dream = current_user.dreams.new
+    else
+      flash.notice = "Need to be logged in"
+      redirect_to '/'
+    end
   end
 
   def create
@@ -24,8 +27,12 @@ class DreamsController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:user_id])
-    @dream = Dream.find(params[:id])
+    if current_user
+      @user = User.find(params[:user_id])
+      @dream = Dream.find(params[:id])
+    else
+      redirect_to '/'
+    end
   end
 
   def update

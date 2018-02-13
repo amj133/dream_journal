@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   root to: "welcome#index"
 
   resources :users, only: [:index, :show, :new, :create] do
-    resources :dreams, only: [:new, :create, :edit, :update, :destroy]
+    resources :dreams, only: [:create, :edit, :update, :destroy]
   end
 
-  resources :dreams, only: [:show] do
+  resources :dreams, only: [:show, :new] do
     resources :comments, only: [:create]
     get '/add_category' => 'application#add_category'
     get '/create_add_category' => 'application#create_add_category'

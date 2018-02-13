@@ -11,8 +11,9 @@ class UsersController < ApplicationController
     if current_user
       @user = User.find(params[:id])
     else
-      render file: '/public/404'
-    end 
+      flash.notice = "Need to be loggin in"
+      redirect_to users_path
+    end
   end
 
   def new
