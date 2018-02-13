@@ -9,7 +9,7 @@ describe "user can see all categories" do
 
       visit categories_path
 
-      expect(page).to have_content("List of Categories")
+      expect(page).to have_content("List of Dream Categories")
       expect(page).to have_content("blue")
       expect(page).to have_content("red")
       expect(page).to have_content("green")

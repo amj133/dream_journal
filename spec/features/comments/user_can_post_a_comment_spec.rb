@@ -4,6 +4,7 @@ describe "user can post a comment on a dream" do
   describe "visits a dream show page" do
     it "posts a comment" do
       bob = User.create!(user_name: "BobRocks15",
+                         password: 'test',
                          email: "bobrocks@gmail.com")
       dream = bob.dreams.create!(title: "Escape From Jungle",
                                  body: "I was a worker on a jungle fortress, there was an overlord/slave driver with a whip, I escaped and flew away",

@@ -2,19 +2,19 @@
   <div class='dreams-info-container'>
     <h3><%= @dream.user.user_name %> - <%= @dream.title%></h3>
 
-    <p>Dream Categories:</p>
-      <ul>
-        <% @dream.categories.each do |category| %>
-          <li><%= category.name %></li>
-        <% end %>
-      </ul>
-
-    <p><%= link_to "Add Additional Category", dream_add_category_path(@dream) %></p>
-
     <p><%= @dream.body %></p>
 
-    <h5>Analysis</h5>
-    <%= @dream.analysis %>
+    <ul>
+      <li><strong>Analysis:</strong>
+      <%= @dream.analysis %></li><br>
+      <li>Dream Categories:
+          <% @dream.categories.each do |category| %>
+            <%= link_to category.name, category_path(category) %>
+          <% end %></li>
+      <p><%= link_to "Add Additional Category", dream_add_category_path(@dream) %></p>
+    </ul>
+
+
 
     <% if @dream.comments.count == 0 %>
       <%= render partial: "comments/form" %>

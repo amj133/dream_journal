@@ -9,7 +9,7 @@
   <%= f.text_area :analysis %><br>
 
   <%= f.label "Category" %>
-  <%= collection_select(:dream, :category_ids, Category.all, :id, :name) %><br>
+  <%= collection_select :dream, :category_ids, Category.all, :id, :name, {}, {multiple: true} %><br>
 
   <%= f.submit %>
 <% end %>

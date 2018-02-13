@@ -1,0 +1,19 @@
+<div class='home'>
+  <div class='home-content-container'>
+    <h3>Please log in</h3>
+
+    <%= form_tag(login_path) do %>
+      <%= label_tag :user_name %>
+      <%= text_field_tag :user_name %><br><br>
+
+      <%= label_tag :password %>
+      <%= password_field_tag :password %><br><br>
+
+      <%= submit_tag "Log in" %>
+    <% end %>
+  </div>
+
+  <div class="home-image-container">
+    <%=image_tag("japanese_maple.png", alt: "japanese maple", id:"home-image") %>
+  </div>
+</div>

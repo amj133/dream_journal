@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  root to: "categories#index"
+  root to: "welcome#index"
 
-  resources :users, only: [:show] do
+  resources :users, only: [:index, :show, :new, :create] do
     resources :dreams, only: [:new, :create, :edit, :update, :destroy]
   end
 
@@ -12,8 +12,10 @@ Rails.application.routes.draw do
     get '/create_add_category' => 'application#create_add_category'
   end
 
-  resources :categories, only: [:index, :show]
+  resources :categories, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
-
+  get '/login', to: "sessions#new"
+  post '/login', to: "sessions#create"
+  delete '/logout', to: "sessions#destroy"
 end
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
