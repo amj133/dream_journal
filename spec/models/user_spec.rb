@@ -9,4 +9,15 @@ describe User, type: :model do
   describe "relationships" do
     it { should have_many(:dreams) }
   end
+
+  describe "roles" do
+    it "can be created as admin" do
+      bob = User.create!(user_name: "bob",
+                         password: "test",
+                         role: 1)
+
+      expect(bob.role).to eq("admin")
+      expect(bob.admin?).to be_truthy
+    end
+  end
 end

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "visitor cannot access edit dream page" do
+describe "visitor cannot access edit dream page " do
   it "tries to access via URI" do
     bob = User.create!(user_name: "BobRocks15",
                        password: 'test',
