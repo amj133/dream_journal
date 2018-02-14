@@ -1,4 +1,4 @@
-<div class='comment'>
-  <h4><%= comment.user_name %></h4>
+<div class='comment-container'>
+  <p><strong><%= comment.user_name %></strong> - Posted: <%= distance_of_time_in_words(comment.dream.created_at, comment.created_at) %> after dream creation</p>
   <p><%= comment.body %></p>
 </div>
