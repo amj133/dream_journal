@@ -1,5 +1,3 @@
-require 'pry'
-
 class DreamsController < ApplicationController
 
   def show
