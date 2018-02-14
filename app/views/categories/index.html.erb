@@ -2,20 +2,20 @@
   <div class='category-list-container'>
     <h3>List of Dream Categories</h3>
 
-    <%= link_to "Create new dream category", new_category_path %>
+    <%= link_to "Create new dream category", new_admin_category_path %>
 
     <ul>
       <% @categories.each do |category| %>
         <li>
           <%= link_to category.name, category_path(category) %>
-          <%= link_to "edit", edit_category_path(category) %>
-          <%= link_to "delete", category_path(category), method: :delete %>
+          <%= link_to "edit", edit_admin_category_path(category) %>
+          <%= link_to "delete", admin_category_path(category), method: :delete %>
         </li><br>
       <% end %>
     </ul>
   </div>
 
   <div class="categories-image-container">
-    <%=image_tag("japanese_maple.png", alt: "japanese maple", id:"categories-image") %>
+    <%= image_tag("japanese_maple.png", alt: "japanese maple", id:"categories-image") %>
   </div>
 </div>

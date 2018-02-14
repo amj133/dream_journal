@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe "user can post a comment on a dream" do
+describe "visitor cannot post comment on a dream" do
   describe "visits a dream show page" do
-    it "posts a comment" do
+    it "tries and fails to post a comment" do
       bob = User.create!(user_name: "BobRocks15",
                          password: 'test',
                          email: "bobrocks@gmail.com")
@@ -10,16 +10,15 @@ describe "user can post a comment on a dream" do
                                  body: "I was a worker on a jungle fortress, there was an overlord/slave driver with a whip, I escaped and flew away",
                                  analysis: "I love action/adventure and the feeling of flying")
 
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return("default")
-
       visit dream_path(dream)
-      fill_in('comment[user_name]', with: "BobRocks")
+      fill_in('comment[user_name]', with: "Sally")
       fill_in('comment[body]', with: "Thats a crazy dream")
       click_on('Create Comment')
 
       expect(current_path).to eq(dream_path(dream))
-      expect(page).to have_content(bob.user_name)
-      expect(page).to have_content("Thats a crazy dream")
+      expect(page).to have_content("Need to be logged in")
+      expect(page).to_not have_content("Sally")
+      expect(page).to_not have_content("Thats a crazy dream")
     end
   end
 end

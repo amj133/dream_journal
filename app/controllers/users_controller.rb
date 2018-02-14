@@ -8,7 +8,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    if current_user
+      @user = User.find(params[:id])
+    else
+      flash.notice = "Need to be logged in"
+      redirect_to users_path
+    end
   end
 
   def new

@@ -1,18 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  def add_category
-    @dream = Dream.find(params[:dream_id])
-    @categories = Category.all
+  helper_method :current_user
 
-    render :add_category
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  def create_add_category
-    @dream = Dream.find(params[:dream_id])
-    @new_category = Category.find(params[:dream][:new_category_id])
-    @dream.categories.push(@new_category)
-
-    redirect_to dream_path(@dream)
+  def current_admin?
+    current_user && current_user.admin?
   end
 end
