@@ -4,8 +4,10 @@
   <% @user.dreams.each do |dream| %>
     <li>
       <%= link_to dream.title, dream_path(dream) %>
-      <%= link_to 'Edit', edit_user_dream_path(@user, dream) %>
-      <%= link_to 'Delete', user_dream_path(dream), method: :delete %>
+      <% if current_user == dream.user %>
+        <%= link_to 'Edit', edit_user_dream_path(@user, dream) %>
+        <%= link_to 'Delete', user_dream_path(dream), method: :delete %>
+      <% end %>
     </li>
   <% end %>
 </ul>

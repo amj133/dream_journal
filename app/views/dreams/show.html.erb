@@ -9,17 +9,15 @@
       <%= @dream.analysis %></li><br>
       <li><strong>Dream Categories:</strong>
           <% @dream.categories.each do |category| %>
-            <%= link_to category.name, category_path(category) %>
+            <%= link_to category.name, category_path(category) %>&nbsp;&nbsp;
           <% end %></li>
-      <p><%= link_to "Add Additional Category", dream_add_category_path(@dream) %></p>
-    </ul>
-
-
+    </ul><br>
 
     <% if @dream.comments.count == 0 %>
       <%= render partial: "comments/form" %>
     <% else %>
-      <%= render partial: "comment", collection: @dream.comments.reverse %>
+      <h3>Discussion</h3>
+      <%= render partial: "comment", collection: @dream.comments.reverse.drop(1) %>
       <%= render partial: "comments/form" %>
     <% end %>
   </div>

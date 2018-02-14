@@ -39,6 +39,7 @@ class DreamsController < ApplicationController
   def update
     @dream = Dream.find(params[:id])
     @dream.update(dream_params)
+    @dream.category_ids = params[:dream][:category_ids]
 
     redirect_to dream_path(@dream)
   end
