@@ -2,14 +2,18 @@
   <div class='category-list-container'>
     <h3>List of Dream Categories</h3>
 
-    <%= link_to "Create new dream category", new_admin_category_path %>
+    <% if current_admin? %>
+      <%= link_to "Create new dream category", new_admin_category_path %>
+    <% end %>
 
     <ul>
       <% @categories.each do |category| %>
         <li>
           <%= link_to category.name, category_path(category) %>
-          <%= link_to "edit", edit_admin_category_path(category) %>
-          <%= link_to "delete", admin_category_path(category), method: :delete %>
+          <% if current_admin? %>
+            <%= link_to "edit", edit_admin_category_path(category) %>
+            <%= link_to "delete", admin_category_path(category), method: :delete %>
+          <% end %>
         </li><br>
       <% end %>
     </ul>

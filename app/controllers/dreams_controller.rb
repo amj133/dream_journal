@@ -27,9 +27,11 @@ class DreamsController < ApplicationController
   end
 
   def edit
-    if current_user
+    if current_user == User.find(params[:user_id])
       @user = User.find(params[:user_id])
       @dream = Dream.find(params[:id])
+    elsif current_user
+      redirect_to user_path(current_user)
     else
       flash.notice = "Need to be logged in"
       redirect_to '/'
@@ -39,6 +41,7 @@ class DreamsController < ApplicationController
   def update
     @dream = Dream.find(params[:id])
     @dream.update(dream_params)
+    @dream.category_ids = params[:dream][:category_ids]
 
     redirect_to dream_path(@dream)
   end

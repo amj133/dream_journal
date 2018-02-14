@@ -1,5 +1,9 @@
-<h3>List of contributors</h3>
+<div class='contributors-list-background'>
+  <div class='contributors-list-container'>
+    <h3>List of contributors</h3>
 
-<% @users.each do |user| %>
-  <%= link_to user.user_name, user_path(user) %><br>
-<% end %>
+    <% @users.each do |user| %>
+      <%= link_to user.user_name, user_path(user) %><br>
+    <% end %>
+  </div>
+</div>

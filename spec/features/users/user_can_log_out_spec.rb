@@ -14,7 +14,8 @@ describe "user can log out" do
     fill_in('user_name', with: bob.user_name)
     fill_in('password', with: bob.password)
     click_on('Log in')
-    click_on('Log out')
+
+    click_on('logout')
 
     expect(current_path).to eq(login_path)
     expect(page).to have_content("Please log in")

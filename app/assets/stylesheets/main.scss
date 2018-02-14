@@ -28,9 +28,14 @@ nav {
   width: 60px;
 }
 
+.flash {
+  display: flex;
+  justify-content: center;
+}
+
 main {
   padding-left: 150px;
-  padding-top: 18px;
+  // padding-top: 18px;
 }
 
 footer {
@@ -40,10 +45,29 @@ footer {
   position: fixed;
   bottom: 0px;
   background-color: black;
-  // background-color: rgb(34, 34, 36);
   color: rgb(229,229,232);
   height: 60px;
   width: 100%;
+}
+
+#login-link-container {
+  position: fixed;
+  margin-left: 10px;
+  bottom: 4px;
+  margin-left: 20px;
+}
+
+#journal-link-container {
+  position: fixed;
+  margin-left: 10px;
+  bottom: 4px;
+  margin-left: 80px;
+}
+
+#login-link {
+  color: white;
+  text-decoration: none;
+  font-size: 2vh;
 }
 
 #footer-link {

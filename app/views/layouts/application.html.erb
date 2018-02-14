@@ -29,5 +29,19 @@
     <footer>
       <p>Email us:&nbsp;&nbsp;&nbsp;<a id='footer-link' href="mailto:fakeaddress@gmail.com">andrew@DreamJournal.com<a></p>
     </footer>
+
+    <div id='login-link-container'>
+      <% if current_user %>
+        <p><%= link_to 'logout', '/logout', method: :delete, id: 'login-link' %></p>
+      <% else %>
+        <p><%= link_to 'login', '/login', id: 'login-link' %></p>
+      <% end %>
+    </div>
+
+    <div id='journal-link-container'>
+      <% if current_user %>
+        <p><%= link_to 'my journal', user_path(current_user.id), id: 'login-link' %></p>
+      <% end %>
+    </div>
   </body>
 </html>

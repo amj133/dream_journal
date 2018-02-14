@@ -10,7 +10,7 @@ describe "user sees all dreams they posted" do
                                  body: "I was a worker on a jungle fortress, there was an overlord/slave driver with a whip, I escaped and flew away",
                                  analysis: "I love action/adventure and the feeling of flying")
 
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return("default")
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(bob)
 
       visit user_path(bob)
 
@@ -25,8 +25,8 @@ describe "user sees all dreams they posted" do
       dream = bob.dreams.create!(title: "Escape From Jungle",
                                  body: "I was a worker on a jungle fortress, there was an overlord/slave driver with a whip, I escaped and flew away",
                                  analysis: "I love action/adventure and the feeling of flying")
-                                 
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return("default")
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(bob)
       visit user_path(bob)
       click_link(dream.title)
 
