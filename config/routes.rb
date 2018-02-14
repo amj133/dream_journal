@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :categories, only: [:new, :create, :edit, :update, :destroy]
+    resources :comments, only: [:destroy]
   end
 
   get '/login', to: "sessions#new"
