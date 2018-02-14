@@ -15,7 +15,6 @@ describe "user can log out" do
     fill_in('password', with: bob.password)
     click_on('Log in')
 
-    save_and_open_page
     click_on('logout')
 
     expect(current_path).to eq(login_path)
