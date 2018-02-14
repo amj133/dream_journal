@@ -1,9 +1,13 @@
-<div class='contributors-list-background'>
-  <div class='contributors-list-container'>
+<div class='contributors-list-container'>
+  <div class='contributors-list'>
     <h3>List of contributors</h3>
 
     <% @users.each do |user| %>
       <%= link_to user.user_name, user_path(user) %><br>
     <% end %>
+  </div>
+
+  <div class="contributors-image-container">
+    <%=image_tag("brushstroke.png", alt: "brush stroke", id:"home-image") %>
   </div>
 </div>

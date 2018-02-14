@@ -1,11 +1,21 @@
-.contributors-list-background {
-  background-image: url(paint.png);
-  background-repeat: no-repeat;
+.contributors-list-container {
+  // background-image: url(brushstroke.png);
+  // background-repeat: no-repeat;
+  // background-size: cover;
   // background-attachment: fixed;
-  height: 500px;
+  // height: 500px;
 }
 
-.contributors-list-container {
+.contributors-list {
+  position: absolute;
   margin-left: 100px;
   margin-top: 0px;
+  z-index: 1;
+}
+
+.contributors-image-container {
+  position: fixed;
+  left: 33  0px;
+  top: 100px;
+  z-index: 0;
 }
