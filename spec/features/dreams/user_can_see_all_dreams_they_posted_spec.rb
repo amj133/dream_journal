@@ -31,7 +31,7 @@ describe "user sees all dreams they posted" do
       click_link(dream.title)
 
       expect(current_path).to eq(dream_path(dream))
-      expect(page).to have_content("BobRocks15 - Escape From Jungle")
+      expect(page).to have_content("Escape From Jungle by BobRocks15")
       expect(page).to have_content(dream.body)
       expect(page).to have_content(dream.analysis)
     end
