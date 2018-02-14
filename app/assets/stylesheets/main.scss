@@ -28,9 +28,14 @@ nav {
   width: 60px;
 }
 
+.flash {
+  display: flex;
+  justify-content: center;
+}
+
 main {
   padding-left: 150px;
-  padding-top: 18px;
+  // padding-top: 18px;
 }
 
 footer {
