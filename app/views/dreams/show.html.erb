@@ -1,6 +1,6 @@
 <div class='dreams'>
   <div class='dreams-info-container'>
-    <h3><%= @dream.user.user_name %> - <%= @dream.title%></h3>
+    <h3><%= @dream.title%> by <%= @dream.user.user_name %>, <%= @dream.created_at.strftime("%m-%d-%Y") %></h3>
 
     <p><%= @dream.body %></p>
 
