@@ -1,5 +1,5 @@
 <div class='comment-container'>
   <p><strong><%= comment.user_name %></strong> - Posted: <%= distance_of_time_in_words(comment.dream.created_at, comment.created_at) %> after dream creation</p>
   <p><%= comment.body %></p>
-  <%= link_to 'delete comment', admin_comment_path(comment), method: :delete %>
+  <%= button_to 'delete comment', admin_comment_path(comment), method: :delete %>
 </div>

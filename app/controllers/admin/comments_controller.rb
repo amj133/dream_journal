@@ -1,4 +1,4 @@
-class Admin::CommentsController < ApplicationController
+class Admin::CommentsController < Admin::BaseController
 
   def destroy
     @comment = Comment.find(params[:id])
@@ -8,4 +8,5 @@ class Admin::CommentsController < ApplicationController
 
     redirect_to dream_path(dream)
   end
+
 end
