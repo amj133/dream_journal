@@ -10,8 +10,7 @@ describe "user cannot access edit category page" do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(bob)
 
-      visit categories_path
-      click_on('edit')
+      visit edit_admin_category_path(red)
 
       expect(page).to have_content("The page you were looking for doesn't exist.")
     end

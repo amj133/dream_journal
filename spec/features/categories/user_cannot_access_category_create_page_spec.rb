@@ -10,9 +10,10 @@ describe "admin can create a category" do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(bob)
 
       visit categories_path
-      click_on('Create new dream category')
 
-      expect(page).to have_content("The page you were looking for doesn't exist.")
+      expect(page).to_not have_content("Create new dream category")
+      expect(page).to_not have_content("edit")
+      expect(page).to_not have_content("delete")
     end
   end
 end
