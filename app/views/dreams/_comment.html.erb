@@ -1,5 +1,7 @@
 <div class='comment-container'>
   <p><strong><%= comment.user_name %></strong> - Posted: <%= distance_of_time_in_words(comment.dream.created_at, comment.created_at) %> after dream creation</p>
   <p><%= comment.body %></p>
-  <%= button_to 'delete comment', admin_comment_path(comment), method: :delete %>
+  <% if current_admin? %>
+    <%= button_to 'delete comment', admin_comment_path(comment), method: :delete %>
+  <% end %>
 </div>
