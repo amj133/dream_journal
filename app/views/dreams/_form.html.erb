@@ -1,15 +1,18 @@
 <%= form_for([current_user, @dream]) do |f| %>
   <%= f.label :title %>
-  <%= f.text_field :title %><br>
+  <%= f.text_field :title %><br><br>
 
   <%= f.label :body %>
-  <%= f.text_area :body %><br>
+  <%= f.text_area :body %><br><br>
 
   <%= f.label :analysis %>
-  <%= f.text_area :analysis %><br>
+  <%= f.text_area :analysis %><br><br>
 
   <%= f.label "Category" %>
-  <%= collection_select :dream, :category_ids, Category.all, :id, :name, {}, {multiple: true} %><br>
+  <%= collection_select :dream, :category_ids, Category.all, :id, :name, {}, {multiple: true} %><br><br>
+
+  <%= f.label "Anonymous?" %>
+  <%= check_box_tag "anonymous?", "1" %><br><br>
 
   <%= f.submit %>
 <% end %>

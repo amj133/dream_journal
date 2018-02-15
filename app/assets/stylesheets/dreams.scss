@@ -10,5 +10,31 @@
 
 #dreams-image {
   height: 30vh;
-  // background-color: rgb(237, 28, 71);
+}
+
+.new-dream-image-container {
+  z-index: 0;
+  // height: 10px;
+  // height: 25vh;
+}
+
+#new-dream-image {
+  position: fixed;
+  height: 150px;
+  bottom: 27px;
+  right: 50px;
+}
+
+#new-dream-image2{
+  position: fixed;
+  height: 145px;
+  bottom: 55px;
+  left: 50px;
+}
+
+#new-dream-image3{
+  position: fixed;
+  height: 350px;
+  bottom: 54px;
+  left: 420px;
 }

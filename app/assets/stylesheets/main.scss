@@ -29,8 +29,9 @@ nav {
 }
 
 .flash {
-  display: flex;
-  justify-content: center;
+  position: absolute;
+  margin-left: 43%;
+  z-index: 1;
 }
 
 main {

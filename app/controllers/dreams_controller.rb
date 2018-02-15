@@ -1,7 +1,7 @@
 class DreamsController < ApplicationController
+  before_action :set_dream, only: [:show, :edit, :update, :destroy]
 
   def show
-    @dream = Dream.find(params[:id])
     @comment = @dream.comments.new
   end
 
@@ -15,8 +15,13 @@ class DreamsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @dream = @user.dreams.new(dream_params)
+    if params[:anonymous?]
+      @user = User.find_by(user_name: "Anonymous")
+      @dream = @user.dreams.new(dream_params)
+    else
+      @user = User.find(params[:user_id])
+      @dream = @user.dreams.new(dream_params)
+    end
     @dream.save
     params[:dream][:category_ids].shift
     @dream.category_ids = params[:dream][:category_ids]
@@ -27,7 +32,6 @@ class DreamsController < ApplicationController
   def edit
     if current_user == User.find(params[:user_id])
       @user = User.find(params[:user_id])
-      @dream = Dream.find(params[:id])
     elsif current_user
       redirect_to user_path(current_user)
     else
@@ -37,7 +41,6 @@ class DreamsController < ApplicationController
   end
 
   def update
-    @dream = Dream.find(params[:id])
     @dream.update(dream_params)
     @dream.category_ids = params[:dream][:category_ids]
 
@@ -45,14 +48,17 @@ class DreamsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:user_id])
-    @dream = Dream.find(params[:id])
+    user = User.find(params[:user_id])
     @dream.destroy
 
-    redirect_to user_path(@user)
+    redirect_to user_path(user)
   end
 
   private
+
+  def set_dream
+    @dream = Dream.find(params[:id])
+  end
 
   def dream_params
     params.require(:dream).permit(:title, :body, :analysis)

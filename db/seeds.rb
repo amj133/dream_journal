@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+anonymous = User.create(user_name: "Anonymous", password: 'test')
 jim = User.create(user_name: "JimRocks12", password: 'test1', email: "jrocks12@gmail.com")
 sally = User.create(user_name: "SallyRocks13", password: 'test2', email: "srocks13@gmail.com")
 frank = User.create(user_name: "FrankRocks14", password: 'test3', email: "frocks14@gmail.com")
@@ -30,3 +31,10 @@ sally.dreams.create(title: "Monkey",
 frank.dreams.create(title: "Jelly Beans",
                   body: "I was buriend in a jar of jelly beans",
                   analysis: "I am stressed at work")
+
+DreamCategory.create!(dream_id: 1, category_id: 1)
+DreamCategory.create!(dream_id: 1, category_id: 2)
+DreamCategory.create!(dream_id: 2, category_id: 2)
+DreamCategory.create!(dream_id: 3, category_id: 1)
+DreamCategory.create!(dream_id: 3, category_id: 3)
+DreamCategory.create!(dream_id: 4, category_id: 3)
