@@ -1,3 +1,19 @@
-<h3>Create a New Dream</h3>
+<div class='dreams'>
+  <div>
+    <h3>Create a New Dream</h3>
 
-<%= render partial: 'form' %>
+    <%= render partial: 'form' %>
+  </div>
+
+  <div class="new-dream-image-container">
+    <%= image_tag("wolf.png", alt: "menacing wolf", id:"new-dream-image") %>
+  </div>
+
+  <div class="new-dream-image-container">
+    <%= image_tag("swing.png", alt: "child on swing set", id:"new-dream-image3") %>
+  </div>
+
+  <div class="new-dream-image-container">
+    <%= image_tag("elephant.png", alt: "artsy elephant", id:"new-dream-image2") %>
+  </div>
+</div>

@@ -31,3 +31,10 @@ sally.dreams.create(title: "Monkey",
 frank.dreams.create(title: "Jelly Beans",
                   body: "I was buriend in a jar of jelly beans",
                   analysis: "I am stressed at work")
+
+DreamCategory.create!(dream_id: 1, category_id: 1)
+DreamCategory.create!(dream_id: 1, category_id: 2)
+DreamCategory.create!(dream_id: 2, category_id: 2)
+DreamCategory.create!(dream_id: 3, category_id: 1)
+DreamCategory.create!(dream_id: 3, category_id: 3)
+DreamCategory.create!(dream_id: 4, category_id: 3)
