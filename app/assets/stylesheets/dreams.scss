@@ -2,6 +2,10 @@
   display: flex;
 }
 
+.new-dream-form {
+  margin-left: 7vh;
+}
+
 .dreams-image-container {
   position: fixed;
   bottom: 50px;
@@ -14,8 +18,6 @@
 
 .new-dream-image-container {
   z-index: 0;
-  // height: 10px;
-  // height: 25vh;
 }
 
 #new-dream-image {
