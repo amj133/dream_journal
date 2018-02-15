@@ -15,8 +15,13 @@ class DreamsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @dream = @user.dreams.new(dream_params)
+    if params[:anonymous?]
+      @user = User.find_by(user_name: "Anonymous")
+      @dream = @user.dreams.new(dream_params)
+    else
+      @user = User.find(params[:user_id])
+      @dream = @user.dreams.new(dream_params)
+    end
     @dream.save
     params[:dream][:category_ids].shift
     @dream.category_ids = params[:dream][:category_ids]
