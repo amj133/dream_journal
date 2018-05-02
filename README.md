@@ -38,14 +38,14 @@ To run the tests, follow the instructions in [Getting Started](#getting-started)
 ```
 rspec
 ```
-#####Tests include: 
+##### Tests include: 
 * feature tests for logging in, registering an account and visiting the user dashboard
 * mailer tests for user receiving an API key and a link to activate their account 
 * model tests of all ActiveRecord and PORO models
 * service tests of all PORO services
 * request tests of all API request endpoints
 
-#####Tools and gems used for testing:
+##### Tools and gems used for testing:
 * [rspec](https://github.com/rspec/rspec-rails)
 * [pry](https://github.com/pry/pry)
 * [capybara](https://github.com/teamcapybara/capybara)
@@ -58,7 +58,7 @@ rspec
 
 ## Deployment
 
-To get set up on our deployed heroku app, visit the application [DreamJournal](https://cryptic-ravine-32891.herokuapp.com/), and register for an account.
+To get set up on the deployed heroku app, visit the application [DreamJournal](https://cryptic-ravine-32891.herokuapp.com/), and register for an account.
 
 ## Contributing
 
@@ -66,7 +66,7 @@ Feel free to make pull requests or comments to contribute to this application. I
 
 ## Authors
 
-* [Andrew Jeffrey](https://github.com/amj133)
+* [Andrew Jeffery](https://github.com/amj133)
 
 
 ## Acknowledgments
